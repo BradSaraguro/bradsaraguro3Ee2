@@ -1,0 +1,26 @@
+<button (click)="alternateVisibility()" class="menu-toggle">☰</button>
+<section class="sidemenu-containers"
+        [style.background-color]="theme"
+        [style.width]="widthMenu + '%'"
+        [style.display]="visibleMenu ? 'flex' : 'none'">
+
+    <div class="item header">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocIUdHjZfGz-ZRgiTyQQMC95jhftF0MrzyigvkY7D60whS5g2Vw=s288-c-no" alt="Profile Picture" class="profile-image">
+        <p class="user-name">{{userName}}</p>
+        <button (click)="alternateVisibility()" class="back-button back-button-right">🔙</button> <!-- Nueva clase -->
+    </div>
+
+    <div class="item">
+        <p><span class="icon">📖</span>Dashboard</p>
+    </div>
+
+    <div class="item">
+        <p><span class="icon">😑</span>Profile</p>
+    </div>
+
+    <div class="item">
+        <button class="btn" (click)="setTheme()">🎨 Change Color</button>
+        <button class="btn" (click)="setSize()">🔧 Change Size</button>
+    </div>
+    
+</section>

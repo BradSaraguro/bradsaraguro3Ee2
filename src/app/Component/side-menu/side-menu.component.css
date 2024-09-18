@@ -1,0 +1,154 @@
+.sidemenu-containers {
+    width: 50%;
+    height: 100vh; /* Altura de la pantalla */
+    background-color: coral;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px; /* Espacio entre elementos */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Efecto de entrada */
+    transform: translateY(-10px); /* Desplazamiento inicial */
+    animation: slide-in 0.5s ease forwards; /* Animación de entrada */
+}
+
+.collapsed {
+    transform: scale(0.1, 1); /* Efecto de minimización */
+    opacity: 0; /* Desaparece gradualmente */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    transition: background 0.3s, transform 0.2s;
+    animation: bounce-in 0.5s ease forwards; /* Animación al entrar */
+}
+
+.item:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border: 2px solid #ffcc00; /* Color del borde */
+    transition: transform 0.3s; /* Efecto de pulsación */
+}
+
+.profile-image:hover {
+    transform: rotate(360deg); /* Efecto de giro al pasar el mouse */
+}
+
+.user-name {
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumentar tamaño de texto */
+    color: #333; /* Color más oscuro para mejor legibilidad */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra de texto */
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 1rem;
+    background: none;
+    border: none;
+}
+
+.btn {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    animation: wiggle 0.5s ease forwards; /* Animación al entrar */
+}
+
+.btn:hover {
+    background-color: #ffd700;
+    transform: scale(1.1); /* Efecto de escalado al pasar el mouse */
+    animation: pulse 0.5s infinite; /* Pulsar al pasar el mouse */
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
